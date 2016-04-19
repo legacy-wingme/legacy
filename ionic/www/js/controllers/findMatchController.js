@@ -14,6 +14,7 @@ module.controller('FindMatchCtrl', function(Matches, $scope) { //as findMatch
 		console.log('inside of get matches : ', matches);
 	  	vm.displayImg = true;
 	  	vm.potentialMatches = matches.potentialMatches;
+	  	$state.go($state.current, {}, {reload: true, inherit: false});
 	}).catch(function(err) {
 		console.error(err);
 	}); 
@@ -26,6 +27,7 @@ module.controller('FindMatchCtrl', function(Matches, $scope) { //as findMatch
 	vm.confirmMatch = function(duo, accepted){
 		Matches.confirmMatch(duo, accepted).then(function(response){
 			Matches.nextMatch(vm.potentialMatches);
+			$state.go($state.current, {}, {reload: true, inherit: false});
 			console.log('vm potentialMatches = ', vm.potentialMatches);
 		});
 	};

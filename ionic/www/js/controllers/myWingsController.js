@@ -38,6 +38,7 @@ module.controller('WingRequestsCtrl', function(Wings) {
 
   vm.remove = function(chat) {
     Chats.remove(chat);
+    $state.go($state.current, {}, {reload: true, inherit: false});
   };
 });
 
