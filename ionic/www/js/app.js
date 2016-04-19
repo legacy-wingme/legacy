@@ -55,18 +55,21 @@ function routes($stateProvider, $urlRouterProvider) {
   $stateProvider
 
   .state('landing', {
+    cache: false,
     url: '/landing',
     templateUrl: 'templates/page-landing.html',
     controller: 'LandingCtrl as landing'
   })
 
   .state('signup', {
+    cache: false,
     url: '/signup',
     templateUrl: 'templates/page-signup.html',
     controller: 'SignUpCtrl as signup'
   })
 
   .state('login', {
+    cache: false,
     url: '/login',
     templateUrl: 'templates/page-login.html',
     controller: 'LoginCtrl as login'
@@ -74,6 +77,7 @@ function routes($stateProvider, $urlRouterProvider) {
 
   // setup an abstract state for the tabs directive
   .state('tab', {
+    cache: false,
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -81,6 +85,7 @@ function routes($stateProvider, $urlRouterProvider) {
 
   // Each tab has its own nav history stack:
   .state('tab.addWing', {
+    cache: false,
     url: '/addWing',
     authenticate: true,
     views: {
@@ -92,6 +97,7 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('tab.myWings', { // my wings
+      cache: false,
       url: '/myWings',
       authenticate: true,
       views: {
@@ -103,6 +109,7 @@ function routes($stateProvider, $urlRouterProvider) {
     })
 
   .state('tab.findMatch', {
+    cache: false,
     url: '/findMatch',
     authenticate: true,
     views: {
@@ -114,6 +121,7 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('tab.myMatches', {
+    cache: false,
     url: '/myMatches',
     authenticate: true,
     views: {
