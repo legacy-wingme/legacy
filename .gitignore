@@ -63,3 +63,5 @@ plugins/
 
 data/
 db/makeData.js
+
+.idea
