@@ -84,6 +84,18 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   // Each tab has its own nav history stack:
+  .state('tab.profile',{
+    cache: false,
+    url: '/profile',
+    authenticate: true,
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl as profile'
+      }
+    }        
+  })
+
   .state('tab.addWing', {
     cache: false,
     url: '/addWing',
