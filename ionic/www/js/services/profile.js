@@ -21,20 +21,7 @@ function profile($http, $state, Auth, Config) {
       url: Config.dev.api + '/profiles',
       data: userProfile
     };
-
-    // we return a promise here so that the controller retains async control.
-    return $http(Auth.attachToken(request))
-      .then(success, error);
-
-    // we can expect an encoded token string from our server.
-    function success(resp) {
-      console.log(resp);
-      return resp;
-    }
-
-    function error(err) {
-      return console.error(err);
-    }
+    return $http.post(request.url, userProfile);
   }
 
 }
