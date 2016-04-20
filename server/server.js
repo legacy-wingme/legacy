@@ -13,6 +13,11 @@ app.use(bodyParser.json());
 // cors
 app.use(cors());
 
+app.use(express.static('../' + config.public));
+app.use('/node_modules', express.static(__dirname + 'ionic/node_modules'));
+
+
+
 //* ---------------------------------------------
 //* ---------------------------------------------
 
@@ -25,7 +30,7 @@ app.use(cors());
 //* ---------------------------------------------
 
 
-/** 
+/**
  *  We use express router to set up our routes in a modular fashion.
  *
  *  Here are the various api routes for our application.

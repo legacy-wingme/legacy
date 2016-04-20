@@ -1,6 +1,6 @@
 var hostname = 'http://localhost';
 var port = '9000';
-var public = 'www'
+var public = 'ionic'
 
 module.exports = {
   hostname: hostname,

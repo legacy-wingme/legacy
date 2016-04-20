@@ -1,6 +1,6 @@
 (function() {
 
-var app = angular.module('wingme', ['ionic', 'wingme.config', 'wingme.authentication', 'wingme.controllers', 'wingme.services']);
+var app = angular.module('wingme', ['ionic', 'wingme.config', 'wingme.authentication', 'wingme.controllers', 'wingme.services', 'firebase']);
 
 app.run(run);
 app.config(routes);
@@ -42,9 +42,9 @@ function run($ionicPlatform, $rootScope, $state, Auth) {
 
     if (toState.authenticate && !Auth.isAuthed()) {
       // User isn’t authenticated
-      event.preventDefault(); 
+      event.preventDefault();
       $state.go('login');
-      
+
     }
   });
 
@@ -75,6 +75,12 @@ function routes($stateProvider, $urlRouterProvider) {
     controller: 'LoginCtrl as login'
   })
 
+  .state('chat', {
+    url: '/chat',
+    templateUrl: 'templates/page-chat.html',
+    controller: 'ChatCtrl'
+  })
+
   // setup an abstract state for the tabs directive
   .state('tab', {
     cache: false,
@@ -93,7 +99,7 @@ function routes($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/tab-profile.html',
         controller: 'ProfileCtrl as profile'
       }
-    }        
+    }
   })
 
   .state('tab.addWing', {

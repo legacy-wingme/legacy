@@ -1,0 +1,24 @@
+<ion-view view-title="Chat">
+
+  <ion-content class="padding">
+    <div>
+      <ion-nav-buttons side="primary">
+        <!-- <button class="button button-icon ion-power" ng-click="logout()"></button> -->
+      </ion-nav-buttons>
+      <ion-nav-buttons side="secondary">
+        Input1
+      </ion-nav-buttons>
+
+      <div>
+      <ion-list>
+          <ion-item ng-repeat="message in messages">
+            {{message.message}}
+          </ion-item>
+      </ion-list>
+      <input ng-model="message"></input>
+        <button class="button button-icon ion-ios-chatboxes" ng-click="addMessage(message)"></button>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
