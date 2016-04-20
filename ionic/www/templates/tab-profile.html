@@ -21,7 +21,7 @@
         <input ng-model="profile.dealBreaker" type="text" placeholder="What are your deal breakers?">
       </label>      
       <label class="item item-input item-floating-label">
-        <input ng-model="profile.socialMedia" type="text" placeholder="Any personal sites(twitter, instagram, etc.)?">
+        <input ng-model="profile.socialMedia" type="text" placeholder="Any personal sites?">
       </label>      
       <label class="item item-input item-floating-label">
         <input ng-model="profile.misc" type="text" placeholder="Anything you want to add?">
@@ -35,14 +35,17 @@
       </div>
     </div> -->
 
-    <button ng-click="signup.signup(
-      signup.username,
-      signup.email,
-      signup.firstname,
-      signup.lastname,
-      signup.password
+    <button ng-click="profile.postProfile(
+      profile.age,
+      profile.location,
+      profile.job,
+      profile.hobbies,
+      profile.want,
+      profile.dealBreaker,
+      profile.socialMedia,
+      profile.misc
       )" class="button button-block button-positive">
-      Create Account
+      Update Profile
     </button>
 
   </ion-content>
