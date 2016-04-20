@@ -20,6 +20,9 @@
     "tests"
   ],
   "dependencies": {
-    "Ionicons": "ionicons#^2.0.1"
+    "Ionicons": "ionicons#^2.0.1",
+    "firechat": "^2.0.1",
+    "angularfire": "^1.2.0",
+    "jquery": "^2.2.3"
   }
 }
