@@ -5,6 +5,13 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
+  <!-- User Profile Tab -->
+  <ion-tab title="My Profile" icon-on="ion-person"
+  icon-off="ion-person" 
+  href="#/tab/profile">
+    <ion-nav-view name="tab-profile"></ion-nav-view>
+  </ion-tab>
+
   <!-- Add Wing Tab -->
   <ion-tab title="Add Wing" icon-off="ion-ios-plus-empty" 
   icon-on="ion-android-add" 

@@ -38,7 +38,7 @@ app.use('/api/signup', require('./routes/signup'));
 app.use('/api/login', require('./routes/login'));
 app.use('/api/wings', require('./routes/wings'));
 app.use('/api/pairs', require('./routes/pairs'));
-
+app.use('/api/profiles', require('./routes/profiles'));
 
 app.listen(config.port, function () {
   console.log('The server is available at http://localhost:', config.port);

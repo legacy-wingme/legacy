@@ -21,7 +21,7 @@ module.controller('SignUpCtrl', function(Auth, $state, $rootScope) {
     Auth.signup(userObj)
       .then(function(resp) {
         if (resp.data.success) {
-          $state.go('tab.addWing');
+          $state.go('tab.profile');
           $rootScope.$broadcast('loggedIn');
         } else {
           vm.error = true;
