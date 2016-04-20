@@ -7,13 +7,16 @@ module.factory('Auth', auth);
 // --------------------------------------
 
 function auth($http, $window, $state, $rootScope, Config) {
+  
+  var username;
 
   return {
     signup: signup,
     login: login,
     logout: logout,
     isAuthed: isAuthed,
-    attachToken: attachToken
+    attachToken: attachToken,
+    username: username
   }
 
   // ------------

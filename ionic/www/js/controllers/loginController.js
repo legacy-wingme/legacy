@@ -4,7 +4,7 @@ var module = angular.module('wingme.controllers');
 
 module.controller('LoginCtrl', loginCtrl);
 
-function loginCtrl(Auth, $state, $scope, $rootScope) {
+function loginCtrl(Auth, $state, $rootScope) {
 
   var vm = this;
   
@@ -16,6 +16,8 @@ function loginCtrl(Auth, $state, $scope, $rootScope) {
       .then(function(resp) {
         if (resp.data.success) {
           $rootScope.$broadcast('loggedIn');
+          console.log(resp.config.data.username);
+          Auth.username = resp.config.data.username;
           $state.go('tab.addWing');
         } else {
           vm.error = true;

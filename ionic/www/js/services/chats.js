@@ -10,6 +10,8 @@ function messages($firebaseArray) {
   return $firebaseArray(messagesRef);
 }
 
+  
+
 
 
 // function chats() {

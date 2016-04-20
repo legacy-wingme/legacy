@@ -6,18 +6,16 @@
         <!-- <button class="button button-icon ion-power" ng-click="logout()"></button> -->
       </ion-nav-buttons>
       <ion-nav-buttons side="secondary">
-        Input1
       </ion-nav-buttons>
 
       <div>
       <ion-list>
           <ion-item ng-repeat="message in messages">
-            {{message.message}}
+            <strong>{{message.username}}:</strong> {{message.message}}
           </ion-item>
       </ion-list>
-      <input ng-model="message"></input>
-        <button class="button button-icon ion-ios-chatboxes" ng-click="addMessage(message)"></button>
-
+      <input ng-model="chat.string">
+        <button ng-click="addMessage(chat.string)">Submit</button>
       </div>
     </div>
   </ion-content>

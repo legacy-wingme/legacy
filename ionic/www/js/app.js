@@ -76,6 +76,7 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('chat', {
+    cache: false,
     url: '/chat',
     templateUrl: 'templates/page-chat.html',
     controller: 'ChatCtrl'
