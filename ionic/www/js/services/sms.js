@@ -7,12 +7,20 @@
   function sms($http, Config, Auth) {
 
 
-    function postsms() {
+    function postsms(phonenumber, text) {
+      console.log('phone number: ', phonenumber);
       var request = {
       method: 'POST',
-      url: Config.dev.api + '/message'
+      url: Config.dev.api + '/message',
+      headers: {
+        "cache-control": "no-cache",
+        "postman-token": "7f3e76b7-3bf7-660a-6838-3610bc7184b1"
+      },
+      data: { "phonenumber": phonenumber,
+              "text"       : text
+            }
     };
-    return $http.post(request.url);
+    return $http(request);
     }
     return {
       postsms: postsms

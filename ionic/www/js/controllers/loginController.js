@@ -7,7 +7,7 @@ module.controller('LoginCtrl', loginCtrl);
 function loginCtrl(Auth, $state, $rootScope) {
 
   var vm = this;
-  
+
   vm.error = false;
   vm.message;
 
@@ -18,7 +18,11 @@ function loginCtrl(Auth, $state, $rootScope) {
           $rootScope.$broadcast('loggedIn');
           console.log(resp.config.data.username);
           Auth.username = resp.config.data.username;
-          $state.go('tab.addWing');
+          Auth.getNumber(Auth.username)
+          .then(function(data) {
+            Auth.phonenumber = data.data[0].phonenumber;
+            $state.go('tab.addWing');
+          });
         } else {
           vm.error = true;
           vm.message = resp.data.message;

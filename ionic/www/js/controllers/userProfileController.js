@@ -3,12 +3,12 @@
 var module = angular.module('wingme.controllers');
 
 module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
-  
+
   var vm = this;
 
   vm.postProfile = function(age, location, job, hobbies, want, dealBreaker, socialMedia, misc) {
     console.log('inside vm.postProfile');
-    
+
     var userProfile = {
       username: Auth.username,
       age: age,
@@ -23,7 +23,7 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
 
     $scope.master = {};
     Profile.postProfile(userProfile);
-    $scope.master = angular.copy(userProfile);
+    $scope.master = angular.copy(userProfile)
       .then(function(){
         console.log('Profile posted');
       })
@@ -38,6 +38,6 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
 
      $scope.reset();
 
-  }
+
 });
 })();

@@ -24,6 +24,7 @@ knex.schema.createTableIfNotExists('users', function (table) {
   table.string('dealBreaker');
   table.string('socialMedia');
   table.string('misc');
+  table.string('phonenumber');
 }).then(function(){
   console.log('Users schema created.');
 });
