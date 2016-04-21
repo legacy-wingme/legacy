@@ -16,7 +16,7 @@ function message(req, res) {
   var client = require('twilio')(process.env.accountSid, process.env.authToken);
   client.messages.create({
     to: req.body.phonenumber,
-    from: "+17148315975",
+    from: process.env.twilionum,
     body: req.body.text,
   }, function(err, message) {
     console.log(message.sid);
