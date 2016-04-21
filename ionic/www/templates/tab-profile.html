@@ -2,6 +2,7 @@
   <ion-content class="padding">
 
     <div class="list list-inset">
+      <form>
       <label class="item item-input item-floating-label">
         <input ng-model="profile.age" type="text" placeholder="How old are you?">
       </label>
@@ -26,14 +27,10 @@
       <label class="item item-input item-floating-label">
         <input ng-model="profile.misc" type="text" placeholder="Anything you want to add?">
       </label>      
-    </div>
-
-<!--     <div ng-if="signup.error" class="row assertive">
-      <div class="col text-center">
-        <p></p>
-        <p>{{signup.message}}</p>
-      </div>
-    </div> -->
+    </form>
+<!--     <pre>form = {{profile | json}}</pre>
+    <pre>master = {{master | json}}</pre> -->
+  </div>
 
     <button ng-click="profile.postProfile(
       profile.age,
