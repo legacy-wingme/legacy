@@ -12,7 +12,7 @@ function wings($http, $state, Config, Auth) {
 
   var wingTypes = {
     currentWing: [],
-    currentWingsReceived: [], 
+    currentWingsReceived: [],
     currentWingsSent: [],
     confirmedWings: [],
     wingRequestsSent: [],
@@ -83,7 +83,7 @@ function wings($http, $state, Config, Auth) {
     }
 
     function error(response) {
-      // TODO: error handling 
+      // TODO: error handling
     }
   }
 
@@ -94,7 +94,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/wingRequests',
       data: {
-        "targetID" : wing.userID, 
+        "targetID" : wing.userID,
         "accepted" : wing.status
       }
     };
@@ -143,7 +143,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/addCurrent', //change
       data: {
-        "targetID" : userID, 
+        "targetID" : userID,
         "accepted" : status
       }
     };
@@ -180,7 +180,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/current', //change
       data: {
-        "targetID" : userID, 
+        "targetID" : userID,
         "accepted" : status
       }
     };
@@ -213,7 +213,7 @@ function wings($http, $state, Config, Auth) {
         wingTypes.currentWingsReceived.splice(num, 1);
         wingTypes.confirmedWings.push(movedWing[0]);
       }
-      
+
     }
 
     function error(response) {
@@ -254,8 +254,9 @@ function wings($http, $state, Config, Auth) {
       // TODO: error handling
     }
   }
+
 }
 
-  
+
 
 })(); // end

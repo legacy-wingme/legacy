@@ -4,6 +4,9 @@ var app = express();
 var cors = require('cors');
 var config = require('./modules/config');
 
+// Require .env
+require('dotenv').config();
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -44,6 +47,7 @@ app.use('/api/login', require('./routes/login'));
 app.use('/api/wings', require('./routes/wings'));
 app.use('/api/pairs', require('./routes/pairs'));
 app.use('/api/profiles', require('./routes/profiles'));
+app.use('/api/message', require('./routes/sms.js'));
 
 app.listen(config.port, function () {
   console.log('The server is available at http://localhost:', config.port);
