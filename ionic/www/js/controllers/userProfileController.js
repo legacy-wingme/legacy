@@ -21,23 +21,15 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
       misc: misc
     };
 
-    $scope.master = {};
-    Profile.postProfile(userProfile);
-    $scope.master = angular.copy(userProfile)
-      .then(function(){
-        console.log('Profile posted');
+    Profile.postProfile(userProfile)
+      .then(function(userProfile) {
+        // $scope.master = angular.copy(userProfile);
+        console.log('userProfile');
       })
-      .catch(function(err){
+      .catch(function(err) {
         console.error(err);
-      });
+      })
     };
-
-    $scope.reset = function() {
-       angular.copy($scope.master, $scope.profile);
-     };
-
-     $scope.reset();
-
 
 });
 })();
