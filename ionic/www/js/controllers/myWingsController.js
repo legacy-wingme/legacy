@@ -36,6 +36,10 @@ module.controller('WingRequestsCtrl', function(Wings) {
       vm.wingRequestsReceived = wings.wingRequestsReceived;
     });
 
+  vm.removeCurrentWing = function () {
+    this.currentWing = {};
+  }
+
   vm.remove = function(chat) {
     Chats.remove(chat);
     $state.go($state.current, {}, {reload: true, inherit: false});
