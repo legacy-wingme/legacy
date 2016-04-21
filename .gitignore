@@ -65,4 +65,4 @@ data/
 db/makeData.js
 
 .idea
-*.env
+.env
