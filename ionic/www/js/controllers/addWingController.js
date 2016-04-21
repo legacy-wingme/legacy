@@ -2,13 +2,16 @@
 
 var module = angular.module('wingme.controllers');
 
-module.controller('AddWingCtrl', function(Wings, Sms) {
+module.controller('AddWingCtrl', function(Wings, Sms, Auth, $scope) {
   var vm = this;
+  vm.message = Auth.username + " has made a wing request.";
   vm.submit = function(username){
-    console.log('text sent');
+    var targetUsername = $scope.addWing.username;
     Wings.addWingPost(username);
-    Sms.postsms(username).then(function($state){
-      $state.go($state.current, {}, {reload: true, inherit: false});
+    Auth.getNumber(targetUsername).then(function(data) {
+      Sms.postsms(data.data[0].phonenumber, vm.message).then(function($state){
+        $state.go($state.current, {}, {reload: true, inherit: false});
+      })
     })
   };
 

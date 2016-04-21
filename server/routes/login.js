@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
       success: false,
       message: 'Please provide a username and password.'
     });
-    
+
   // if data validation passes
   } else {
     knex('users').where({username: user.username})
@@ -41,6 +41,15 @@ router.post('/', function(req, res) {
       });
   }
 });
+
+router.get('/', function(req, res) {
+  console.log('get number', req.query);
+  var user = req.query.username;
+  knex('users').where({username: user}).select('phonenumber')
+  .then(function(resp) {
+    res.send(resp);
+  })
+})
 
 // helper functions
 function validate(user) {
