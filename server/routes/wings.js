@@ -10,6 +10,7 @@ var db = require('../modules/duoHelpers.js');
  *  API endpint: /api/wings
  *
  */
+router.post('/remove', postRemove); 
 router.post('/add', postAdd);
 router.get('/wingRequests', getWingRequests);
 router.post('/wingRequests', postWingRequests);
@@ -20,6 +21,19 @@ router.post('/current', postCurrent);
  *  POST to /api/wings/add
  *  
  */
+function postRemove(req, res) {
+  //pull out the username from post req
+  console.log('inside postRemove');
+  var wingToRemove = req.body.wingToRemove; //works! ex. jane
+  console.log('db: ',db);
+  db.removeUser(wingToRemove).then(function(user) {
+    hp.sendJSON(res, true, 'Wing Removed');
+  })
+  .catch(function(error) {
+    console.log('error in postRemove',error);
+  });
+}
+
 function postAdd(req, res) {
   var tokenObj = auth.decode(req.headers['x-access-token']);
   var clientID = tokenObj.ID;
