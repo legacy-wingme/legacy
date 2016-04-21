@@ -9,7 +9,7 @@
       string: ''
     };
     $scope.text;
-    $scope.string;
+    
 
     $scope.addMessage = function(text) {
       $scope.text = text;

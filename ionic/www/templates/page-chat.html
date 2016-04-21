@@ -3,7 +3,7 @@
   <ion-content class="padding">
     <div>
       <ion-nav-buttons side="primary">
-        <!-- <button class="button button-icon ion-power" ng-click="logout()"></button> -->
+         <button class="button button-icon ion-power" ng-click="logout()"></button>
       </ion-nav-buttons>
       <ion-nav-buttons side="secondary">
       </ion-nav-buttons>
@@ -14,6 +14,7 @@
             <strong>{{message.username}}:</strong> {{message.message}}
           </ion-item>
       </ion-list>
+
       <input ng-model="chat.string">
         <button ng-click="addMessage(chat.string)">Submit</button>
       </div>
