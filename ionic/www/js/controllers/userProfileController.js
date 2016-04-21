@@ -30,6 +30,11 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
         console.error(err);
       })
     };
+  
+    $scope.reset = function() {
+       angular.copy($scope.master, $scope.profile);
+     };
 
+     $scope.reset();
 });
 })();
