@@ -148,8 +148,8 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   font-weight: 700;
   color: #fff;
   background-color: #279DC4;
-  -webkit-box-shadow: 0 3px 0 0 #1C7E9E;
-  box-shadow: 0 3px 0 0 #1C7E9E;
+  -webkit-box-shadow: 0 3px 0 0 #F71E46;
+  box-shadow: 0 3px 0 0 #F71E46;
 }
 
 .add-wing .button-dark:active {
@@ -158,7 +158,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 }
 
 .add-wing .button-dark:active {
-  box-shadow: 0 3px 0 0 #1C7E9E;
+  box-shadow: 0 3px 0 0 #F71E46;
 }
 
 .names {

@@ -27,8 +27,8 @@ router.post('/', function(req, res) {
     dealBreaker: req.body.dealBreaker,
     socialMedia: req.body.socialMedia,
     misc: req.body.misc
-  }).then(function(data){
-    console.log(data);
+  }).then(function(req){
+    console.log(req, 'line31');
       res.json({
         success: true,
         message: 'User survey inserted into database'
