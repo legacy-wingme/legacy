@@ -7,9 +7,9 @@ module.controller('AddWingCtrl', function(Wings, Sms) {
   vm.submit = function(username){
     console.log('text sent');
     Wings.addWingPost(username);
-    // Sms.postsms().then(function($state){
-    //   $state.go($state.current, {}, {reload: true, inherit: false});
-    // })
+    Sms.postsms(username).then(function($state){
+      $state.go($state.current, {}, {reload: true, inherit: false});
+    })
   };
 
 });

@@ -12,13 +12,12 @@ router.post('/', message);
 
 function message(req, res) {
   //require the Twilio module and create a REST client
-  console.log('inside message', req);
   var client = require('twilio')(process.env.accountSid, process.env.authToken);
-  console.log('inside message')
+  console.log('inside message', req.body)
   client.messages.create({
     to: "7142871507",
-    from: "+14242526073",
-    body: "test",
+    from: "+17148315975",
+    body: "new test",
   }, function(err, message) {
     console.log(message.sid);
   });
