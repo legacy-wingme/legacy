@@ -6,7 +6,7 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
   
   var vm = this;
 
-  vm.postProfile = function(username, age, location, job, hobbies, want, dealBreaker, socialMedia, misc) {
+  vm.postProfile = function(age, location, job, hobbies, want, dealBreaker, socialMedia, misc) {
     console.log('inside vm.postProfile');
     var userProfile = {
       username: Auth.username,
