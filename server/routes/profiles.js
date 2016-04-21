@@ -32,7 +32,7 @@ function postProf(req, res) {
         success: true,
         message: 'User survey inserted into database'
       });
-    }
+    });
 }
 
 // export router
