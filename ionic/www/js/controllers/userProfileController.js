@@ -8,6 +8,7 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
 
   vm.postProfile = function(age, location, job, hobbies, want, dealBreaker, socialMedia, misc) {
     console.log('inside vm.postProfile');
+    
     var userProfile = {
       username: Auth.username,
       age: age,
@@ -20,14 +21,23 @@ module.controller('ProfileCtrl', function(Profile, Auth, $scope, $state) {
       misc: misc
     };
 
-    Profile.postProfile(userProfile)
+    $scope.master = {};
+    Profile.postProfile(userProfile);
+    $scope.master = angular.copy(userProfile);
       .then(function(){
         console.log('Profile posted');
       })
       .catch(function(err){
         console.error(err);
-      });  
+      });
+    };
+
+    $scope.reset = function() {
+       angular.copy($scope.master, $scope.profile);
+     };
+
+     $scope.reset();
+
   }
 });
-
 })();
