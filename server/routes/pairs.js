@@ -7,6 +7,7 @@ var config = require('../modules/config');
 
 var getRandomImage = imageGenerator();
 
+
 /**
  *  router/wings.js
  *
@@ -18,7 +19,7 @@ router.post('/', postPairs);
 
 /**
  *  POST to /api/pairs/
- *  
+ *
  */
 function getPairs(req, res) {
   var tokenObj = auth.decode(req.headers['x-access-token']);
@@ -100,11 +101,11 @@ function getPairs(req, res) {
       hp.sendJSON(res, true, 'Here are all of your duos', result);
     });
   }
-} 
+}
 
 /**
  *  POST to /api/pairs/
- *  
+ *
  */
 function postPairs(req, res) {
   var tokenObj = auth.decode(req.headers['x-access-token']);

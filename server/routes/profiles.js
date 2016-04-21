@@ -19,16 +19,16 @@ router.post('/', function(req, res) {
   console.log('inside profile post request on server side');
   knex('users').where({'username': req.body.username})
   .update({
-  	age: req.body.age,
-  	location: req.body.location,
-  	job: req.body.job, 
-  	hobbies: req.body.hobbies, 
-  	want: req.body.want,
-  	dealBreaker: req.body.dealBreaker,
-  	socialMedia: req.body.socialMedia,
-  	misc: req.body.misc 
+    age: req.body.age,
+    location: req.body.location,
+    job: req.body.job,
+    hobbies: req.body.hobbies,
+    want: req.body.want,
+    dealBreaker: req.body.dealBreaker,
+    socialMedia: req.body.socialMedia,
+    misc: req.body.misc
   }).then(function(data){
-  	console.log(data);
+    console.log(data);
       res.json({
         success: true,
         message: 'User survey inserted into database'
