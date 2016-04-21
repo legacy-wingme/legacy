@@ -33,8 +33,10 @@ router.post('/', function(req, res) {
         success: true,
         message: 'User survey inserted into database'
       });
+
     })
 });
+
 
 // export router
 module.exports = router;
