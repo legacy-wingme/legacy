@@ -3925,10 +3925,11 @@ a.subdued {
     .bar.bar-light.bar-footer {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
-    border-color: #b2b2b2;
-    background-color: #f8f8f8;
-    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-    color: #444; }
+    border-color: #fff;
+    border-width: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
+    color: #fff; }
     .bar.bar-stable .title {
       color: #444; }
     .bar.bar-stable.bar-footer {
@@ -4116,10 +4117,11 @@ a.subdued {
 
 .bar-stable .button {
   border-color: transparent;
-  background-color: #f8f8f8;
-  color: #444; }
+  background-color: #fff;
+  font-weight: 600;
+  color: #8DD7F8; }
   .bar-stable .button:hover {
-    color: #444;
+    color: #fff;
     text-decoration: none; }
   .bar-stable .button.active, .bar-stable .button.activated {
     background-color: #e5e5e5; }
