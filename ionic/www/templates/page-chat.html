@@ -8,17 +8,20 @@
       <ion-nav-buttons side="secondary">
       </ion-nav-buttons>
 
-      <div>
+      <div class="list list-inset chat-div">
       <ion-list>
           <ion-item ng-repeat="message in messages">
             <strong>{{message.username}}:</strong> {{message.message}}
           </ion-item>
       </ion-list>
+
 <br>
       <input ng-model="chat.string" style="width: 280px">
         <!--<i class="button ion-ios-paperplane" style="min-height:0px" ng-click="addMessage(chat.string)"></i>-->
           <button ng-click="addMessage(chat.string)">Submit</button>
+
       </div>
+        </div>
     </div>
   </ion-content>
 </ion-view>
