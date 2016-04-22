@@ -208,3 +208,12 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 .names {
   text-align: center;
 }
+
+i.ion-email {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.chat-div {
+
+}
