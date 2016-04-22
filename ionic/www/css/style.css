@@ -90,7 +90,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   position: relative;
   top: 0;
   width: 262px;
-  height: 185px;
+  height: 230px;
   /*background-image: url('../img/wmLogo-white.png');*/
 }
 
@@ -143,13 +143,13 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 }
 
 .button.button-balanced {
-  background-color: #ffcce6;
+  background-color: #8DD7F8;
   font-weight: 600;
 }
 
 .button.button-balanced:hover,
 .button.button-balanced:active {
-  background-color: #ffcce6;
+  background-color: #8DD7F8;
   font-weight: 600;
 }
 
