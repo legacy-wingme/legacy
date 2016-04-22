@@ -15,8 +15,9 @@
           </ion-item>
       </ion-list>
 <br>
-      <input ng-model="chat.string">
-        <i class="button ion-ios-paperplane" style="min-height:0px" ng-click="addMessage(chat.string)"></i>
+      <input ng-model="chat.string" style="width: 280px">
+        <!--<i class="button ion-ios-paperplane" style="min-height:0px" ng-click="addMessage(chat.string)"></i>-->
+          <button ng-click="addMessage(chat.string)">Submit</button>
       </div>
     </div>
   </ion-content>
