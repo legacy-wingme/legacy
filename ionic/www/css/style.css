@@ -31,9 +31,12 @@ body, .pane, .view {
 }
 
 .bar.bar-stable {
-  background-color: #279DC4;
+  background-color: #8DD7F8;
   border: none;
+  color: #8DD7F8;
 }
+
+
 
 .bar.bar-stable .title {
   color: #fff;
@@ -47,7 +50,30 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 }
 
 .landing-page {
+  /*background-color: #B2EDF8;*/
+  background-color: #8DD7F8;
+}
+
+.landing-bar {
+  background-color: #B2EDF8;
+}
+
+.landing-button {
+  background-color: #fff;
+  /*color: #85B9C1;*/
+  color: #279DC4;
+  font-weight: 500;
+}
+
+.blue-button {
+  background-color: #8DD7F8;
+}
+
+.dark-blue-button {
   background-color: #279DC4;
+  color: #fff;
+  font-weight: 600;
+
 }
 
 .landing-page .logo {
