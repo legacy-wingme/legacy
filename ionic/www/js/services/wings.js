@@ -23,6 +23,7 @@ function wings($http, $state, Config, Auth) {
     getWings: getWings, // gets all wings from /api/wings/requests
     updateWing: updateWing, // post wing to /api/wings/requests
     addWingPost: addWingPost,
+    removeWingPost: removeWingPost,
     currentWingReq: currentWingReq,
     currentWingResp: currentWingResp
   };
@@ -220,6 +221,32 @@ function wings($http, $state, Config, Auth) {
       // TODO: error handling
     }
   }
+
+  function removeWingPost(username) { //pass in obj instead
+
+    var request = {
+      method: 'POST',
+      url: Config.dev.api + '/wings/remove',
+      data: {
+        wingToRemove: username //change to .username
+      }
+    };
+
+    $http(Auth.attachToken(request))
+     .then(success, error);
+
+    // -----------------
+    // request callbacks
+
+    function success(response) {
+      console.log('success removing current wing',response);
+      $state.go('tab.myWings'); //redirect to tab.myWings angular doesn't use paths it uses state.go
+    }
+
+    function error(response) {
+      // TODO: error handling
+    }
+  }  
 
   function addWingPost(username) { //pass in obj instead
 
