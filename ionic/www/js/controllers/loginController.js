@@ -4,10 +4,10 @@ var module = angular.module('wingme.controllers');
 
 module.controller('LoginCtrl', loginCtrl);
 
-function loginCtrl(Auth, $state, $scope, $rootScope) {
+function loginCtrl(Auth, $state, $rootScope) {
 
   var vm = this;
-  
+
   vm.error = false;
   vm.message;
 
@@ -16,7 +16,13 @@ function loginCtrl(Auth, $state, $scope, $rootScope) {
       .then(function(resp) {
         if (resp.data.success) {
           $rootScope.$broadcast('loggedIn');
-          $state.go('tab.addWing');
+          console.log(resp.config.data.username);
+          Auth.username = resp.config.data.username;
+          Auth.getNumber(Auth.username)
+          .then(function(data) {
+            Auth.phonenumber = data.data[0].phonenumber;
+            $state.go('tab.addWing');
+          });
         } else {
           vm.error = true;
           vm.message = resp.data.message;

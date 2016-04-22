@@ -1,6 +1,6 @@
 (function() {
 
-var app = angular.module('wingme', ['ionic', 'wingme.config', 'wingme.authentication', 'wingme.controllers', 'wingme.services']);
+var app = angular.module('wingme', ['ionic', 'wingme.config', 'wingme.authentication', 'wingme.controllers', 'wingme.services', 'firebase']);
 
 app.run(run);
 app.config(routes);
@@ -42,9 +42,9 @@ function run($ionicPlatform, $rootScope, $state, Auth) {
 
     if (toState.authenticate && !Auth.isAuthed()) {
       // User isn’t authenticated
-      event.preventDefault(); 
+      event.preventDefault();
       $state.go('login');
-      
+
     }
   });
 
@@ -55,32 +55,56 @@ function routes($stateProvider, $urlRouterProvider) {
   $stateProvider
 
   .state('landing', {
+    cache: false,
     url: '/landing',
     templateUrl: 'templates/page-landing.html',
     controller: 'LandingCtrl as landing'
   })
 
   .state('signup', {
+    cache: false,
     url: '/signup',
     templateUrl: 'templates/page-signup.html',
     controller: 'SignUpCtrl as signup'
   })
 
   .state('login', {
+    cache: false,
     url: '/login',
     templateUrl: 'templates/page-login.html',
     controller: 'LoginCtrl as login'
   })
 
+  .state('chat', {
+    cache: false,
+    url: '/chat',
+    templateUrl: 'templates/page-chat.html',
+    controller: 'ChatCtrl'
+  })
+
   // setup an abstract state for the tabs directive
   .state('tab', {
+    cache: false,
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
 
   // Each tab has its own nav history stack:
+  .state('tab.profile',{
+    cache: false,
+    url: '/profile',
+    authenticate: true,
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl as profile'
+      }
+    }
+  })
+
   .state('tab.addWing', {
+    cache: false,
     url: '/addWing',
     authenticate: true,
     views: {
@@ -92,6 +116,7 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('tab.myWings', { // my wings
+      cache: false,
       url: '/myWings',
       authenticate: true,
       views: {
@@ -103,6 +128,7 @@ function routes($stateProvider, $urlRouterProvider) {
     })
 
   .state('tab.findMatch', {
+    cache: false,
     url: '/findMatch',
     authenticate: true,
     views: {
@@ -114,6 +140,7 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('tab.myMatches', {
+    cache: false,
     url: '/myMatches',
     authenticate: true,
     views: {

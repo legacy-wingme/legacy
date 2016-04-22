@@ -10,7 +10,7 @@
         <img ng-src="./img/ben.png">
         <h2>{{wing.firstname}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i> <!-- this is the arrow at end of row-->
-        <ion-option-button class="button-positive" ng-click="">
+        <ion-option-button class="button-positive" ng-click="myWings.removeCurrentWing()">
           Remove Current Wing
         </ion-option-button>
       </ion-item>
@@ -85,6 +85,10 @@
         </ion-option-button>
       </ion-item>
     </ion-list>
+
+    <div>
+      <img src="../img/friend.png"/ style="width:100px; position:absolute; bottom:0; right:0; margin:45px">
+    </div>
     
   </ion-content>
 </ion-view>

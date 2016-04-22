@@ -16,9 +16,19 @@ knex.schema.createTableIfNotExists('users', function (table) {
   table.string('lastname');
   table.string('email');
   table.string('password');
+  table.string('age');
+  table.string('location');
+  table.string('job');
+  table.string('hobbies');
+  table.string('want');
+  table.string('dealBreaker');
+  table.string('socialMedia');
+  table.string('misc');
+  table.string('phonenumber');
 }).then(function(){
-	console.log('Users schema created.');
+  console.log('Users schema created.');
 });
+
 
 knex.schema.createTableIfNotExists('duos', function (table) {
   table.increments('ID').primary();
@@ -123,7 +133,6 @@ knex.schema.createTableIfNotExists('pairsAccepted', function (table) {
 }).then(function(){
   console.log('Pairs schema created.');
 });
-
 
 module.exports = {
   knex: knex,

@@ -1,14 +1,17 @@
 <ion-view view-title="WingMe" class="landing-page">
   <ion-content class="padding">
     
-    <div class="landing-container">
-      <div class="logo"></div>
+    <div class="landing-container" style="border-top-width: 5px">
+      <div class="row">
+        <div class ="col col-center" style="margin-bottom:50px"><img class="logo" ng-src="./img/wmLogo-white.png">
+        </div>
+      </div>
 
-      <button ng-click="landing.redirectToLogin()" class="button button-block button-dark">
+      <button ng-click="landing.redirectToLogin()" class="button button-block landing-button">
         Log In
       </button>
 
-      <button ng-click="landing.redirectToSignup()" class="button button-block button-balanced">
+      <button ng-click="landing.redirectToSignup()" class="button button-block landing-button">
         Sign Up
       </button>
     </div>

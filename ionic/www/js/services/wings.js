@@ -12,7 +12,7 @@ function wings($http, $state, Config, Auth) {
 
   var wingTypes = {
     currentWing: [],
-    currentWingsReceived: [], 
+    currentWingsReceived: [],
     currentWingsSent: [],
     confirmedWings: [],
     wingRequestsSent: [],
@@ -23,6 +23,7 @@ function wings($http, $state, Config, Auth) {
     getWings: getWings, // gets all wings from /api/wings/requests
     updateWing: updateWing, // post wing to /api/wings/requests
     addWingPost: addWingPost,
+    removeWingPost: removeWingPost,
     currentWingReq: currentWingReq,
     currentWingResp: currentWingResp
   };
@@ -83,7 +84,7 @@ function wings($http, $state, Config, Auth) {
     }
 
     function error(response) {
-      // TODO: error handling 
+      // TODO: error handling
     }
   }
 
@@ -94,7 +95,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/wingRequests',
       data: {
-        "targetID" : wing.userID, 
+        "targetID" : wing.userID,
         "accepted" : wing.status
       }
     };
@@ -143,7 +144,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/addCurrent', //change
       data: {
-        "targetID" : userID, 
+        "targetID" : userID,
         "accepted" : status
       }
     };
@@ -180,7 +181,7 @@ function wings($http, $state, Config, Auth) {
       method: 'POST',
       url: Config.dev.api + '/wings/current', //change
       data: {
-        "targetID" : userID, 
+        "targetID" : userID,
         "accepted" : status
       }
     };
@@ -213,13 +214,39 @@ function wings($http, $state, Config, Auth) {
         wingTypes.currentWingsReceived.splice(num, 1);
         wingTypes.confirmedWings.push(movedWing[0]);
       }
-      
+
     }
 
     function error(response) {
       // TODO: error handling
     }
   }
+
+  function removeWingPost(username) { //pass in obj instead
+
+    var request = {
+      method: 'POST',
+      url: Config.dev.api + '/wings/remove',
+      data: {
+        wingToRemove: username //change to .username
+      }
+    };
+
+    $http(Auth.attachToken(request))
+     .then(success, error);
+
+    // -----------------
+    // request callbacks
+
+    function success(response) {
+      console.log('success removing current wing',response);
+      $state.go('tab.myWings'); //redirect to tab.myWings angular doesn't use paths it uses state.go
+    }
+
+    function error(response) {
+      // TODO: error handling
+    }
+  }  
 
   function addWingPost(username) { //pass in obj instead
 
@@ -254,8 +281,9 @@ function wings($http, $state, Config, Auth) {
       // TODO: error handling
     }
   }
+
 }
 
-  
+
 
 })(); // end

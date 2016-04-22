@@ -25,15 +25,21 @@ body, .pane, .view {
   top: -20px;
 }
 
+.bar {
+  border: none;git
+}
 
 .auth-page {
   /*background-color: #3E8791;*/
 }
 
 .bar.bar-stable {
-  background-color: #279DC4;
+  background-color: #8DD7F8;
   border: none;
+  color: #8DD7F8;
 }
+
+
 
 .bar.bar-stable .title {
   color: #fff;
@@ -43,19 +49,49 @@ body, .pane, .view {
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
 ion-tabs.tabs-color-active-positive .tab-item.active,
 ion-tabs.tabs-color-active-positive .tab-item.activated {
-  color: #279DC4;
+  color: #8DD7F8;
 }
 
 .landing-page {
-  background-color: #279DC4;
+  /*background-color: #B2EDF8;*/
+  background-color: #8DD7F8;
+  /*background-image: url("http://animechat.de/wp-content/uploads/2011/06/Silhouette_15.png");*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.landing-bar {
+  background-color: #B2EDF8;
+}
+
+.landing-button {
+  background-color: #fff;
+  /*color: #85B9C1;*/
+  color: #8DD7F8
+;
+  font-weight: 500;
+}
+
+.blue-button {
+  background-color: #8DD7F8;
+  color: #fff;
+  font-weight: 700;
+}
+
+.dark-blue-button {
+  background-color: #8DD7F8;
+  color: #fff;
+  font-weight: 600;
+
 }
 
 .landing-page .logo {
   position: relative;
   top: 0;
   width: 262px;
-  height: 185px;
-  background-image: url('../img/wmLogo-white.png');
+  height: 230px;
+  /*background-image: url('../img/wmLogo-white.png');*/
 }
 
 .landing-container {
@@ -66,23 +102,27 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 .landing-page .button-dark {
   background-color: #fff;
   color: #117191;
+  font-weight: 600;
 }
 
 .landing-page .button-dark:hover, 
 .landing-page .button-dark:active {
   background-color: #A7E0F2;
   color: #117191;
+  font-weight: 600;
 }
 
 .landing-page .button-balanced {
-  background-color: #F25774;
+  background-color: #ffcce6;
   color: #fff;
+  font-weight: 600;
 }
 
 .landing-page .button-balanced:hover,
 .landing-page .button-balanced:active {
   background-color: #C43D56;
   color: #fff;
+  font-weight: 600;
 }
 
 /**
@@ -92,21 +132,25 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
  */
  
 .button.button-positive {
-  background-color: #279DC4;
+  background-color: #8DD7F8;
+  font-weight: 600;
 }
 
 .button.button-positive:hover,
 .button.button-positive:active {
-  background-color: #279DC4;
+  background-color: #8DD7F8;
+  font-weight: 600;
 }
 
 .button.button-balanced {
-  background-color: #F25774;
+  background-color: #8DD7F8;
+  font-weight: 600;
 }
 
 .button.button-balanced:hover,
 .button.button-balanced:active {
-  background-color: #F25774;
+  background-color: #8DD7F8;
+  font-weight: 600;
 }
 
 .button.button-dark {
@@ -147,20 +191,30 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 .add-wing .button-dark {
   font-weight: 700;
   color: #fff;
-  background-color: #279DC4;
-  -webkit-box-shadow: 0 3px 0 0 #1C7E9E;
-  box-shadow: 0 3px 0 0 #1C7E9E;
+  background-color: #8DD7F8;
+  -webkit-box-shadow: 0 3px 0 0 #F71E46;
+  box-shadow: 0 3px 0 0 #F71E46;
 }
 
 .add-wing .button-dark:active {
   color: #fff;
-  background-color: #279DC4;
+  background-color: #8DD7F8;
 }
 
 .add-wing .button-dark:active {
-  box-shadow: 0 3px 0 0 #1C7E9E;
+  box-shadow: 0 3px 0 0 #F71E46;
 }
 
 .names {
   text-align: center;
+
+}
+
+i.ion-email {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.chat-div {
+
 }

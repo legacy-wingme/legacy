@@ -1,0 +1,47 @@
+<ion-view view-title="My Profile" class="profile-page">
+  <ion-content class="padding">
+
+    <div class="list list-inset">
+      <form>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.age" type="text" placeholder="How old are you?">
+      </label>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.location" type="text" placeholder="Where are you from?">
+      </label>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.job" type="text" placeholder="What do you do?">
+      </label>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.hobbies" type="text" placeholder="What are your hobbies?">
+      </label>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.want" type="text" placeholder="What are you looking for?">
+      </label>
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.dealBreaker" type="text" placeholder="What are your deal breakers?">
+      </label>      
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.socialMedia" type="text" placeholder="Any personal sites?">
+      </label>      
+      <label class="item item-input item-floating-label">
+        <input ng-model="profile.misc" type="text" placeholder="Anything you want to add?">
+      </label>      
+    </form>
+  </div>
+
+    <button type="button" style="background:#8DD7F8" ng-click="profile.postProfile(
+      profile.age,
+      profile.location,
+      profile.job,
+      profile.hobbies,
+      profile.want,
+      profile.dealBreaker,
+      profile.socialMedia,
+      profile.misc
+      )" class="button button-block button-positive">
+      Update Profile
+    </button>
+
+  </ion-content>
+</ion-view>

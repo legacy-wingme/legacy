@@ -18,10 +18,19 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <script src="lib/jquery/dist/jquery.js"></script>
+
+    <!-- Firebase & Firechat -->
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/firechat/dist/firechat.min.js"></script>
+    <link rel="stylesheet" href="lib/firechat/dist/firechat.min.css">
+
     <!-- Authored JS -->
     <script src="js/app.js"></script>
     <script src="js/config.js"></script>
     <!-- Controllers -->
+    <script src="js/controllers/userProfileController.js"></script>
     <script src="js/controllers/findMatchController.js"></script>
     <script src="js/controllers/myMatchesController.js"></script>
     <script src="js/controllers/myWingsController.js"></script>
@@ -30,19 +39,34 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/landingController.js"></script>
     <script src="js/controllers/navController.js"></script>
+    <script src="js/controllers/chatController.js"></script>
     <!-- Services -->
     <script src="js/services/authentication.js"></script>
     <script src="js/services/wings.js"></script>
     <script src="js/services/matches.js"></script>
+    <script src="js/services/profile.js"></script>
+    <script src="js/services/chats.js"></script>
+    <script src="js/services/sms.js"></script>
 
   </head>
   <body ng-app="wingme">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable" ng-controller="NavCtrl as nav">
-      <ion-nav-buttons side="secondary">
-        <button ng-if="nav.authed" class="button button-dark" ng-click="nav.logout()">
+    <ion-nav-bar class="bar-stable landing-button" style="border-color: white" ng-controller="NavCtrl as nav">
+      <ion-nav-buttons side="left">
+        <button ng-if="nav.authed && !nav.inChat" class="button landing-button" style="color: #8DD7F8" ng-click="nav.chat()">
+          Global Chat
+        </button>
+        <button ng-if="nav.inChat" class="button landing-button" style="color: #8DD7F8" ng-click="nav.leave()">
+          Leave Chat
+        </button>
+      </ion-nav-buttons>
+    <!--</ion-nav-bar>-->
+
+    <!--<ion-nav-bar class="bar-stable" ng-controller="NavCtrl as nav">-->
+      <ion-nav-buttons side="right">
+        <button ng-if="nav.authed" class="button landing-button" ng-click="nav.logout()">
           Logout
         </button>
       </ion-nav-buttons>

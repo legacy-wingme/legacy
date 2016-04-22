@@ -11,6 +11,7 @@ module.controller('MyMatchesCtrl', function(Matches) { //as myMatches
 		console.log('matches in myMatches tab: ', Matches.matches);
 	  	vm.pendingMatches = Matches.matches.pendingMatches;
 	  	vm.myMatchesArray = Matches.matches.confirmedMatches;
+	  	$state.go($state.current, {}, {reload: true, inherit: false});
 
 	  	console.log('pendingMatches = ', Matches.matches.pendingMatches);
 	}).catch(function(err) {

@@ -36,8 +36,17 @@ module.controller('WingRequestsCtrl', function(Wings) {
       vm.wingRequestsReceived = wings.wingRequestsReceived;
     });
 
+  vm.removeCurrentWing = function () {
+    var username = this.currentWing[0].firstname.toLowerCase(); //works (ex. jane)
+    console.log('wings',Wings);
+    Wings.removeWingPost(username);
+    $state.go($state.current, {}, {reload: true, inherit: false});
+    this.currentWing = {};
+  }
+
   vm.remove = function(chat) {
     Chats.remove(chat);
+    $state.go($state.current, {}, {reload: true, inherit: false});
   };
 });
 

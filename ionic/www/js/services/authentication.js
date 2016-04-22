@@ -8,15 +8,35 @@ module.factory('Auth', auth);
 
 function auth($http, $window, $state, $rootScope, Config) {
 
+  var username;
+  var phonenumber;
+
   return {
     signup: signup,
     login: login,
     logout: logout,
+    getNumber: getNumber,
     isAuthed: isAuthed,
-    attachToken: attachToken
+    attachToken: attachToken,
+    username: username,
+    phonenumber: phonenumber
   }
 
   // ------------
+
+  function getNumber (username) {
+    var params = {
+      username: username
+    }
+
+    var config = {
+      params: params
+    }
+    console.log('params: ', params);
+    console.log('config: ', config);
+
+    return $http.get(Config.dev.api + '/login', config);
+  }
 
   function signup(userObj) {
     console.log(userObj);

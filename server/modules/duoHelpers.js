@@ -1,5 +1,12 @@
 var knex = require('../db');
 
+function removeUser(username) {
+  console.log('inside of removeUser');
+  return knex('users')
+    .where('username',username)
+    .del()
+}
+
 function getUser(username) {
   console.log('inside of getUser');
   return knex('users')
@@ -198,6 +205,7 @@ module.exports = {
   getDuo: getDuo,
   getUser: getUser,
   moveDuo: moveDuo,
+  removeUser: removeUser,
   removeDuoFrom: removeDuoFrom,
   updateStatus: updateStatus,
   getAllDuosOf: getAllDuosOf,
