@@ -53,12 +53,12 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable" ng-controller="NavCtrl as nav">
+    <ion-nav-bar class="bar-stable landing-button" ng-controller="NavCtrl as nav">
       <ion-nav-buttons side="left">
-        <button ng-if="nav.authed && !nav.inChat" class="button button-dark" ng-click="nav.chat()">
+        <button ng-if="nav.authed && !nav.inChat" class="button landing-button" ng-click="nav.chat()">
           Global Chat
         </button>
-        <button ng-if="nav.inChat" class="button button-dark" ng-click="nav.leave()">
+        <button ng-if="nav.inChat" class="button landing-button" ng-click="nav.leave()">
           Leave Chat
         </button>
       </ion-nav-buttons>
@@ -66,7 +66,7 @@
 
     <!--<ion-nav-bar class="bar-stable" ng-controller="NavCtrl as nav">-->
       <ion-nav-buttons side="right">
-        <button ng-if="nav.authed" class="button button-dark" ng-click="nav.logout()">
+        <button ng-if="nav.authed" class="button landing-button" ng-click="nav.logout()">
           Logout
         </button>
       </ion-nav-buttons>
