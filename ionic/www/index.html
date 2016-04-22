@@ -55,7 +55,7 @@
     -->
     <ion-nav-bar class="bar-stable landing-button" style="border-color: white" ng-controller="NavCtrl as nav">
       <ion-nav-buttons side="left">
-        <button ng-if="nav.authed && !nav.inChat" class="button landing-button" ng-click="nav.chat()">
+        <button ng-if="nav.authed && !nav.inChat" class="button landing-button" style="color: #8DD7F8" ng-click="nav.chat()">
           Global Chat
         </button>
         <button ng-if="nav.inChat" class="button landing-button" style="color: #8DD7F8" ng-click="nav.leave()">
