@@ -25,6 +25,9 @@ body, .pane, .view {
   top: -20px;
 }
 
+.bar {
+  border: none;git
+}
 
 .auth-page {
   /*background-color: #3E8791;*/
@@ -52,6 +55,10 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 .landing-page {
   /*background-color: #B2EDF8;*/
   background-color: #8DD7F8;
+  /*background-image: url("http://animechat.de/wp-content/uploads/2011/06/Silhouette_15.png");*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
 .landing-bar {
@@ -67,6 +74,8 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 
 .blue-button {
   background-color: #8DD7F8;
+  color: #fff;
+  font-weight: 700;
 }
 
 .dark-blue-button {
@@ -81,7 +90,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   top: 0;
   width: 262px;
   height: 185px;
-  background-image: url('../img/wmLogo-white.png');
+  /*background-image: url('../img/wmLogo-white.png');*/
 }
 
 .landing-container {
